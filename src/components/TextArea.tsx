@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap";
+import { Textarea } from "@/components/ui/textarea";
 import { SectionType } from "../type.d";
 
 type Props = {
@@ -33,14 +33,13 @@ export const TextArea = ({type, loading, value, onChange }: Props) => {
   }
 
   return (
-    <Form.Control
+    <Textarea
       autoFocus={type === SectionType.From}
-      as="textarea"
       disabled={type === SectionType.To}
       placeholder={getPlaceholder({ type, loading })}
       style={styles}
       value={value}
       onChange={handleChange}
     />
-  );
+  )
 };

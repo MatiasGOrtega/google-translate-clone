@@ -2,7 +2,6 @@ import { OpenAI } from "openai";
 import { SUPPORTED_LANGUAGES } from "../constants";
 import { FromLanguage, Language } from "../type.d";
 
-
 const API_KEY = import.meta.env.BASE_URL;
 
 const openai = new OpenAI({apiKey: API_KEY, dangerouslyAllowBrowser: true});
@@ -38,22 +37,22 @@ export const translate = async ({
       role: 'assistant' as const,
       content: "Hello world",
     },
-    {
-      role: 'user' as const, 
-      content: "How are you? {{auto}} [[Deutsch]]",
-    },
-    {
-      role: 'assistant' as const,
-      content: "Wie geht es dir?",
-    },
-    {
-      role: 'user' as const,
-      content: "Bon dia, com estas? {{auto}} [[Español]]",
-    },
-    {
-      role: 'assistant' as const,
-      content: "Buenos días, ¿cómo estás?",
-    },
+    // {
+    //   role: 'user' as const, 
+    //   content: "How are you? {{auto}} [[Deutsch]]",
+    // },
+    // {
+    //   role: 'assistant' as const,
+    //   content: "Wie geht es dir?",
+    // },
+    // {
+    //   role: 'user' as const,
+    //   content: "Bon dia, com estas? {{auto}} [[Español]]",
+    // },
+    // {
+    //   role: 'assistant' as const,
+    //   content: "Buenos días, ¿cómo estás?",
+    // },
   ];
 
   const completion = await openai.chat.completions.create({
